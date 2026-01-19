@@ -1,0 +1,97 @@
+*{
+  font-family: Arial, sans-serif;
+  box-sizing: border-box;
+}
+
+/*============ header ============*/
+
+h1{
+  font-size: 60px;
+  font-weight: bold;
+  color: #000000;
+  text-align: center;
+  -webkit-text-stroke: 2px white;
+  text-shadow: #760909 2px 2px 4px;
+  position: relative;
+  z-index: 1;
+}
+
+header {
+  position: relative;
+  overflow: hidden;
+  min-height: 280px; 
+  padding: 16px 24px;
+}
+
+.navigation-left ul {
+  display: flex;
+  gap: 20px;
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.navigation-left {
+  font-size: 10%;
+  position: relative;
+  z-index: 1;
+}
+
+.navigation-left a {
+  padding: 5px;
+  border: 1px solid #ab0d0d;
+  border-radius: 20%;
+  background-color: white;
+  text-decoration: none;
+  color: #ab0d0d;
+}
+
+.navigation-left a:hover {
+  color: #560707;
+  border: 1px solid #560707;
+}
+
+.navigation-right {
+  font-size: 10%;
+  position: absolute;
+  top: 16px;
+  right: 24px;
+  z-index: 1;
+}
+
+.navigation-right ul {
+  display: flex;
+  gap: 20px;
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.navigation-right a {
+  padding: 5px;
+  border: 1px solid #ab0d0d;
+  border-radius: 20%;
+  background-color: white;
+  text-decoration: none;
+  color: #ab0d0d;
+}
+
+.navigation-right a:hover {
+  color: #560707;
+  border: 1px solid #560707;
+}
+
+.banner {
+  position: absolute;
+  inset: 0;   /* top, right, bottom, left : 0 */
+  width: 100%;
+  height: 100%;
+  background-size: cover;
+  background-position: center;
+  opacity: 0.4; 
+  z-index: 0;
+}
+
+
+
+/*============ main ============*/
