@@ -1,0 +1,12 @@
+/* Footer */
+footer {
+  background-color: #eaa6a6;
+  padding: 20px;
+  margin-top: 50px;
+  font-size: 1.2vw;
+  color: var(--secondary-color);
+  display: flex;
+  justify-content: space-between;  
+  align-items: flex-start; 
+  gap: 20px;
+}

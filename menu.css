@@ -1,0 +1,89 @@
+/* Menu section */
+#menu{
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.menu-category {
+  font-size: 2vw;
+  font-weight: bold;
+  margin-top: 10vw;
+  margin-bottom: 8ch;
+  text-align: center;
+  position: relative;
+}
+
+.menu-btn{
+  background-color: var(--primary-color);
+  color: white;
+  border: none;
+  border-radius: 15px;
+  padding: 10px 20px;
+  margin: 5px;
+  font-size: 1.2vw;
+  font-weight: bold;
+  cursor: pointer;
+  box-shadow: var(--secondary-color) 0px 3px;
+}
+
+.menu-btn:hover{
+  opacity: 0.8;
+}
+
+.menu-card{
+  display: inline-block;
+  width: 30%;
+  border: 2px solid var(--primary-color);
+  border-radius: 15px;
+  padding: 10px;
+  box-shadow: var(--secondary-color) 0px 3px;
+}
+
+.menu-card:hover {
+  background-color: var(--primary-color);
+  cursor: pointer;
+  color: white;
+  box-shadow: var(--secondary-color) 0px 3px;
+}
+
+.menu-card .menu-image{
+  width: 50%;
+  height: auto;
+}
+
+.menu-card .menu-image:hover {
+  transform: scale(1.2);
+  transition: transform 0.3s;
+}
+
+.menu-card .price{
+  font-size: 2vw;
+  font-weight: bold;
+  margin-bottom: 1vw;
+}
+
+.menu-card .New-badge {
+  position: absolute;
+  background-color: #ab0d0d;
+  color: white;
+  padding: 5px 10px;
+  margin: -8px 0 0 -8px;
+  font-size: 1.5vw;
+  font-weight: bold;
+  border-radius: 12px; 
+  z-index: 2;
+}
+
+.menu-card .Best-badge {
+  position: absolute;
+  background-color: var(--primary-color);
+  color: white;
+  padding: 5px 10px;
+  margin: -8px 0 0 -8px;
+  font-size: 1.5vw;
+  font-weight: bold;
+  border-radius: 12px; 
+  z-index: 2;
+}

@@ -8,7 +8,8 @@
 </head>
 <body>
   <header>
-    <nav class="navigation-left">
+    <div class="navigation">
+      <nav class="navigation-left">
       <ul>
         <li><a href="about">About us</a></li>
         <li><a href="tea">Tea</a></li>
@@ -25,6 +26,7 @@
         <li><a href="#">채용</a></li>
       </ul>
     </nav>
+    </div>
     <img src="banner.jpg" alt="배너" class="banner">
   </header>
 
@@ -37,7 +39,7 @@
       전통과 혁신을 함께 담아 차 한 잔마다 특별한 경험을 전하기 위해 노력합니다.
     </p>
     <p>
-      우리는 ‘행복 한 잔’을 전합니다.
+      우리는 <span>‘행복 한 잔’</span>을 전합니다.
     </p>
     <p>
       공차는 ‘10억 잔의 행복’을 전하는 여정을 이어가고 있습니다. 
@@ -64,12 +66,21 @@
     </section>
 
     <section id="menu">
+      <div class="section-header">
+        <h2>Menu</h2>
+        <p>공차의 시그니처 메뉴를 만나보세요!</p>
+        <button class="menu-btn">전체메뉴 보기</button>
+        <button class="menu-btn">커피</button>
+        <button class="menu-btn">티</button>
+        <button class="menu-btn">스무디</button>
+      </div>
       <section class="menu-category">
         <h3>New 시즌 메뉴</h3>
         <div class="menu-list">
           <article class="menu-card">
             <div class="New-badge">New ✨</div>
             <h4>소금 밀크티(+미니펄)</h4>
+            <img src="images/소금밀크티.png" alt="소금 밀크티" class="menu-image">
             <p class="price">₩5,800</p>
             <p class="desc">부드러운 밀크티에 은은한 스모키 소금 풍미가 어우러져, 깊고 균형 잡힌 단짠의 조화를 전하는 밀크티입니다.</p>
           </article>
@@ -77,8 +88,17 @@
           <article class="menu-card">
             <div class="New-badge">New ✨</div>
             <h4>흑임자 밀크티 + 펄</h4>
+            <img src="images/흑임자밀크티.png" alt="흑임자 밀크티" class="menu-image">
             <p class="price">₩5,500</p>
             <p class="desc">고소한 흑임자와 진한 블랙티에 쫀득하 펄이 어우러져, 진하고 깊은 향의 조화를 전하는 밀크티입니다.</p>
+          </article>
+
+          <article class="menu-card">
+            <div class="New-badge">New ✨</div>
+            <h4>흑임자 크림 커피</h4>
+            <img src="images/흑임자크림커피.png" alt="흑임자 크림 커피" class="menu-image">
+            <p class="price">₩5,300</p>
+            <p class="desc">진한 커피에 고소한 흑임자가 어우러져, 깊고 부드러운 커피 음료입니다. 아주 야르합니다.</p>
           </article>
         </div>
       </section>
@@ -88,14 +108,23 @@
         <div class="menu-list">
           <article class="menu-card">
             <h4>솔티드 고구마 밀크티</h4>
+            <img src="images/솔티드고구마밀크티.png" alt="솔티드 고구마 밀크티" class="menu-image">
             <p class="price">₩5,800</p>
             <p class="desc">향긋한 블랙티가 들어간 단짠 솔티드 버터고구마에 쫀득한 펄을 더한 시즌한정 밀크티입니다.</p>
           </article>
           <article class="menu-card">
             <div class="Best-badge">Best 👍</div>
             <h4>딸기 쥬얼리 밀크티</h4>
+            <img src="images/딸기쥬얼리밀크티.png" alt="딸기 쥬얼리 밀크티" class="menu-image">
             <p class="price">₩5,500</p>
             <p class="desc">얼그레이티로 만든 밀크티에 리얼 딸기 과즙이 함유된 새콤달콤한 딸기 쥬얼리를 더한 음료</p>
+          </article>
+
+          <article class="menu-card">
+            <h4>피스타치오 밀크티</h4>
+            <img src="images/피스타치오밀크티.png" alt="피스타치오 밀크티" class="menu-image">
+            <p class="price">₩5,500</p>
+            <p class="desc">그린티를 넣은 달콤하고 고소한 피스타치오 밀크티 마시지말고 두쫀쿠에 전부 양보하세요 </p>
           </article>
         </div>
       </section>
@@ -105,13 +134,21 @@
         <div class="menu-list">
           <article class="menu-card">
             <h4>딸기 쿠키 스무디</h4>
+            <img src="images/딸기쿠키스무디.png" alt="딸기 쿠키 스무디" class="menu-image">
             <p class="price">₩5,600</p>
             <p class="desc">얼그레이티로 만든 밀크 스무디에 달콤한 딸기와 바삭한 쿠키를 더한 스무디</p>
           </article>
           <article class="menu-card">
             <h4>브라운슈가 치즈폼 스무디</h4>
+            <img src="images/브라운슈가치즈폼스무디.png" alt="브라운슈가 치즈폼 스무디" class="menu-image">
             <p class="price">₩5,900</p>
             <p class="desc">부드럽고 달콤한 브라운 슈가 쥬얼리와 달콤짭조름한 치즈폼을 더한 스무디</p>
+          </article>
+          <article class="menu-card">
+            <h4>초코바른 초코 스무디</h4>
+            <img src="images/초코바른초코스무디.png" alt="초코바른 초코 스무디" class="menu-image">
+            <p class="price">₩5,800</p>
+            <p class="desc">달콤한 초코 쿠키 스무디에 컵에 둘러진 초콜렛으로 비쥬얼을 더한 스무디</p>
           </article>
         </div>
       </section>
@@ -124,8 +161,8 @@
         농담곰 월드 농담곰 시 농담곰 로 123 (우)12345<br>
       </address>
       <dl>
-        <dt>사업자등록번호</dt>
-        <dd>123-456-7890</dd>
+        <dt>메일</dt>
+        <dd>Nagano@gmail.com</dd>
     </div>
     <div class="time">
       <dl>

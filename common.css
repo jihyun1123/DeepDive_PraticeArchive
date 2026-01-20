@@ -1,0 +1,71 @@
+/* Common variables & resets */
+*{
+  font-family: Arial, sans-serif;
+  box-sizing: border-box;
+}
+
+:root{
+  --primary-color: #ab0d0d;
+  --secondary-color: #560707;
+  --background-color: #f4e1e1;
+  --text-color: #000000;
+}
+
+/* Utilities */
+#to-top {
+  position: fixed;
+  bottom: 30px;
+  right: 30px;
+  padding: 1.5% 1%;
+  background-color: var(--primary-color);
+  color: white;
+  border: none;
+  border-radius: 20%;
+  box-shadow: var(--secondary-color) 0px 3px;
+  z-index: 100;
+}
+
+/* Global text & common section styles */
+h2 {
+  font-size: 3vw;
+  font-weight: bold;
+  color: #ab0d0d;
+  text-align: center;
+  margin-bottom: 10px;
+}
+
+p {
+  font-size: 1.5vw;
+  text-align: center;
+  line-height: 1.6;
+  margin-bottom: 20px;
+}
+
+span {
+  font-weight: bold;
+  color: var(--primary-color);
+}
+
+.great-values {
+  display: flex;
+  justify-content: center;
+  gap: 30px;
+  list-style: none;
+  padding: 0;
+  margin: 20px 0 80px 0;
+  font-size: 3vw;
+  font-weight: bold;
+}
+
+.great-values li {
+  border: 2px solid var(--primary-color);
+  border-radius: 15%;
+  padding: 10px 20px;
+  box-shadow: var(--secondary-color) 0px 3px;
+}
+
+.great-values li:hover {
+  background-color: var(--primary-color);
+  color: white;
+  box-shadow: #260505 0px 3px;
+}
