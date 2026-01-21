@@ -1,0 +1,106 @@
+
+========================================
+JavaScript 배열 메서드 학습 정리
+========================================
+
+
+1. find()
+- 설명: 조건을 만족하는 첫 번째 요소를 반환
+- 리턴 값: 요소 / 없으면 undefined
+
+const nums1 = [1, 3, 5, 7, 8];
+const findResult = nums1.find(num => num % 2 === 0);
+console.log(findResult); // 8
+
+
+
+2. findIndex()
+- 설명: 조건을 만족하는 첫 번째 요소의 인덱스를 반환
+- 리턴 값: 인덱스 / 없으면 -1
+
+const nums2 = [10, 20, 30, 40];
+const findIndexResult = nums2.findIndex(num => num === 30);
+console.log(findIndexResult); // 2
+
+
+
+3. some()
+- 설명: 배열 요소 중 하나라도 조건을 만족하면 true
+- 리턴 값: true / false
+
+const scores1 = [60, 70, 80];
+const someResult = scores1.some(score => score < 70);
+console.log(someResult); // true
+
+
+
+4. every()
+- 설명: 배열 요소가 모두 조건을 만족하면 true
+- 리턴 값: true / false
+
+const scores2 = [80, 90, 100];
+const everyResult = scores2.every(score => score >= 70);
+console.log(everyResult); // true
+
+
+
+5. reduce() ⭐
+- 설명: 배열을 하나의 값으로 누적 계산
+- 리턴 값: 누적된 하나의 값
+
+const nums3 = [1, 2, 3, 4];
+const sum = nums3.reduce((acc, cur) => {
+  return acc + cur;
+}, 0);
+console.log(sum); // 10
+
+
+
+6. sort() ⚠️ 원본 배열 변경
+- 설명: 배열을 정렬
+- 리턴 값: 정렬된 배열 (원본 변경)
+
+const nums4 = [3, 1, 5, 2];
+nums4.sort((a, b) => a - b);
+console.log(nums4); // [1, 2, 3, 5]
+
+
+
+7. includes()
+- 설명: 배열에 특정 값이 포함되어 있는지 확인
+- 리턴 값: true / false
+
+const fruits = ["apple", "banana", "orange"];
+console.log(fruits.includes("banana")); // true
+console.log(fruits.includes("grape"));  // false
+
+
+
+8. slice()
+- 설명: 배열의 일부를 잘라 새로운 배열 반환 (원본 유지)
+- 리턴 값: 새로운 배열
+
+const nums5 = [1, 2, 3, 4, 5];
+const sliceResult = nums5.slice(1, 4);
+console.log(sliceResult); // [2, 3, 4]
+console.log(nums5);       // 원본 유지
+
+
+
+9. join()
+- 설명: 배열 요소를 문자열로 합침
+- 리턴 값: 문자열
+
+const words = ["Hello", "World"];
+const joinResult = words.join(" ");
+console.log(joinResult); // "Hello World"
+
+
+
+10. reverse() ⚠️ 원본 배열 변경
+- 설명: 배열 순서를 뒤집음
+- 리턴 값: 뒤집힌 배열 (원본 변경)
+
+const nums6 = [1, 2, 3];
+nums6.reverse();
+console.log(nums6); // [3, 2, 1]
