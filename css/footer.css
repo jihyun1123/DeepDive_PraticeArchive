@@ -1,12 +1,76 @@
 /* Footer */
 footer {
   background-color: #eaa6a6;
-  padding: 20px;
-  margin-top: 50px;
-  font-size: 1.2vw;
+  padding: var(--spacing-xl) var(--spacing-lg);
+  margin-top: var(--spacing-xxl);
+  font-size: var(--font-size-sm);
   color: var(--secondary-color);
   display: flex;
   justify-content: space-between;  
   align-items: flex-start; 
-  gap: 20px;
+  gap: var(--spacing-lg);
+}
+
+footer dl {
+  margin: var(--spacing-sm) 0;
+}
+
+footer dt {
+  font-weight: 600;
+  margin-bottom: var(--spacing-xs);
+  color: var(--secondary-color);
+}
+
+footer dt i {
+  margin-right: var(--spacing-xs);
+  color: var(--primary-color);
+}
+
+footer dd {
+  margin-left: var(--spacing-md);
+  color: var(--text-color);
+}
+
+footer address {
+  font-style: normal;
+  margin-bottom: var(--spacing-sm);
+  line-height: 1.6;
+}
+
+footer address i {
+  margin-right: var(--spacing-xs);
+  color: var(--primary-color);
+}
+
+/* SNS 링크 */
+.social-links {
+  display: flex;
+  gap: var(--spacing-sm);
+  margin-top: var(--spacing-md);
+}
+
+.social-links a {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 40px;
+  height: 40px;
+  background-color: var(--white);
+  color: var(--primary-color);
+  border-radius: 50%;
+  text-decoration: none;
+  font-size: var(--font-size-md);
+  transition: all 0.3s ease;
+  box-shadow: 0 2px 8px rgba(171, 13, 13, 0.2);
+}
+
+.social-links a:hover {
+  background-color: var(--primary-color);
+  color: var(--white);
+  transform: translateY(-3px);
+  box-shadow: 0 4px 12px rgba(171, 13, 13, 0.3);
+}
+
+.social-links a:active {
+  transform: translateY(-1px);
 }

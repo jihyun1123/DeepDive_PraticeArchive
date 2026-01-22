@@ -3,8 +3,8 @@ header {
   position: relative;
   overflow: hidden;
   min-height: 400px; 
-  padding: 16px 24px;
-  margin-bottom: 5vw;
+  padding: var(--spacing-sm) var(--spacing-md);
+  margin-bottom: var(--spacing-xl);
 }
 
 .navigation{
@@ -31,61 +31,69 @@ header {
 
 .navigation-left ul {
   display: flex;
-  gap: 20px;
+  gap: var(--spacing-md);
   list-style: none;
   padding: 0;
   margin: 0;
 }
 
 .navigation-left {
-  font-size: 10%;
+  font-size: var(--font-size-sm);
   position: relative;
   z-index: 1;
 }
 
 .navigation-left a {
-  padding: 5px;
+  padding: var(--spacing-xs) var(--spacing-sm);
   border: 1px solid var(--primary-color);
-  border-radius: 20%;
-  background-color: white;
+  border-radius: var(--radius-sm);
+  background-color: var(--white);
   text-decoration: none;
   color: var(--primary-color);
+  font-weight: 500;
+  transition: all 0.3s ease;
 }
 
 .navigation-left a:hover {
-  color: #ffffff;
+  color: var(--white);
   border: 1px solid var(--secondary-color);
   background-color: #8a1d1d;
+  transform: translateY(-2px);
+  box-shadow: 0 2px 8px rgba(171, 13, 13, 0.2);
 }
 
 .navigation-right {
-  font-size: 10%;
-  top: 16px;
-  right: 24px;
+  font-size: var(--font-size-sm);
+  top: var(--spacing-sm);
+  right: var(--spacing-md);
   z-index: 1;
 }
 
 .navigation-right ul {
   display: flex;
-  gap: 20px;
+  gap: var(--spacing-md);
   list-style: none;
   padding: 0;
   margin: 0;
 }
 
 .navigation-right a {
-  padding: 5px;
+  padding: var(--spacing-xs) var(--spacing-sm);
   border: 1px solid var(--primary-color);
-  border-radius: 20%;
-  background-color: white;
+  border-radius: var(--radius-sm);
+  background-color: var(--white);
   text-decoration: none;
   color: var(--primary-color);
+  font-weight: 500;
+  transition: all 0.3s ease;
 }
 
 .navigation-right a:hover {
-  color: #ffffff;
+  color: var(--white);
   border: 1px solid var(--secondary-color);
   background-color: #8a1d1d;
+  transform: translateY(-2px);
+  box-shadow: 0 2px 8px rgba(171, 13, 13, 0.2);
 }
 
 .banner {

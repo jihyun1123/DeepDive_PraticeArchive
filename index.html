@@ -4,12 +4,26 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <link rel="stylesheet" href="css/style.css">
-  <title>Document</title>
+  <!-- Font Awesome 아이콘 -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+  <title>Nongdam Cha - 농담차</title>
 </head>
 <body>
+  
+  <div class="loading-spinner" id="loadingSpinner">
+    <div class="spinner"></div>
+  </div>
+
   <header>
+    <!-- 햄버거 메뉴 버튼 (모바일용) -->
+    <button class="hamburger-menu" id="hamburgerMenu" aria-label="메뉴">
+      <span></span>
+      <span></span>
+      <span></span>
+    </button>
+    
     <div class="navigation">
-      <nav class="navigation-left">
+      <nav class="navigation-left" id="navLeft">
       <ul>
         <li><a href="about">About us</a></li>
         <li><a href="tea">Tea</a></li>
@@ -20,7 +34,7 @@
       </ul>
     </nav>
     <h1>Nongdam cha</h1>
-    <nav class="navigation-right">
+    <nav class="navigation-right" id="navRight">
       <ul>
         <li><a href="#">창업문의</a></li>
         <li><a href="#">채용</a></li>
@@ -69,10 +83,10 @@
       <div class="section-header">
         <h2>Menu</h2>
         <p>공차의 시그니처 메뉴를 만나보세요!</p>
-        <button class="menu-btn">전체메뉴 보기</button>
-        <button class="menu-btn">커피</button>
-        <button class="menu-btn">티</button>
-        <button class="menu-btn">스무디</button>
+        <button class="menu-btn"><i class="fas fa-list"></i> 전체메뉴 보기</button>
+        <button class="menu-btn"><i class="fas fa-coffee"></i> 커피</button>
+        <button class="menu-btn"><i class="fas fa-mug-hot"></i> 티</button>
+        <button class="menu-btn"><i class="fas fa-blender"></i> 스무디</button>
       </div>
       <section class="menu-category">
         <h3>New 시즌 메뉴</h3>
@@ -98,7 +112,7 @@
             <h4>흑임자 크림 커피</h4>
             <img src="images/흑임자크림커피.png" alt="흑임자 크림 커피" class="menu-image">
             <p class="price">₩5,300</p>
-            <p class="desc">진한 커피에 고소한 흑임자가 어우러져, 깊고 부드러운 커피 음료입니다. 아주 야르합니다.</p>
+            <p class="desc">진~~~한 커피에 고소한 흑임자가 어우러져, 깊고 부드러운 커피 음료입니다. 아주 맛이 야르합니다.</p>
           </article>
         </div>
       </section>
@@ -153,25 +167,78 @@
         </div>
       </section>
     </section>
+
   </main>
 
   <footer>
     <div class="footer-left">
       <address>
-        농담곰 월드 농담곰 시 농담곰 로 123 (우)12345<br>
+        <i class="fas fa-map-marker-alt"></i> 농담곰 월드 농담곰 시 농담곰 로 123 (우)12345<br>
       </address>
       <dl>
-        <dt>메일</dt>
+        <dt><i class="fas fa-envelope"></i> 메일</dt>
         <dd>Nagano@gmail.com</dd>
+      </dl>
+      <dl>
+        <dt><i class="fas fa-phone"></i> 전화</dt>
+        <dd>010-1234-5678</dd>
+      </dl>
     </div>
     <div class="time">
       <dl>
-        <dt>운영시간</dt>
+        <dt><i class="fas fa-clock"></i> 운영시간</dt>
         <dd>매일 10:00 - 22:00</dd>
       </dl>
+      <div class="social-links">
+        <a href="#" aria-label="Instagram"><i class="fab fa-instagram"></i></a>
+        <a href="#" aria-label="Facebook"><i class="fab fa-facebook"></i></a>
+        <a href="#" aria-label="Twitter"><i class="fab fa-twitter"></i></a>
+      </div>
     </div>
   </footer>
 
-  <button id="to-top">⬆️맨 위로</button>
+  <button id="to-top" aria-label="맨 위로">
+    <i class="fas fa-arrow-up"></i>
+  </button>
+
+  <script>
+    // 페이지 로딩 완료 시 스피너 숨기기
+    window.addEventListener('load', function() {
+      const spinner = document.getElementById('loadingSpinner');
+      setTimeout(() => {
+        spinner.classList.add('hidden');
+      }, 500);
+    });
+
+    // 맨 위로 버튼 스크롤
+    document.getElementById('to-top').addEventListener('click', function() {
+      window.scrollTo({
+        top: 0,
+        behavior: 'smooth'
+      });
+    });
+
+    // 햄버거 메뉴 토글
+    const hamburgerMenu = document.getElementById('hamburgerMenu');
+    const navLeft = document.getElementById('navLeft');
+    const navRight = document.getElementById('navRight');
+
+    hamburgerMenu.addEventListener('click', function() {
+      hamburgerMenu.classList.toggle('active');
+      navLeft.classList.toggle('active');
+      navRight.classList.toggle('active');
+    });
+
+    // 메뉴 외부 클릭 시 닫기
+    document.addEventListener('click', function(event) {
+      if (!hamburgerMenu.contains(event.target) && 
+          !navLeft.contains(event.target) && 
+          !navRight.contains(event.target)) {
+        hamburgerMenu.classList.remove('active');
+        navLeft.classList.remove('active');
+        navRight.classList.remove('active');
+      }
+    });
+  </script>
 </body>
 </html>

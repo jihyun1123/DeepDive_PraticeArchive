@@ -1,0 +1,216 @@
+/* ========================================
+   고급 CSS 효과
+   ======================================== */
+
+/* Gradient 배경으로 섹션 구분 */
+body {
+  background: linear-gradient(to bottom, 
+    #ffffff 0%, 
+    #fef5f5 30%, 
+    #f4e1e1 70%, 
+    #ffe5e5 100%
+  );
+  min-height: 100vh;
+}
+
+/* 메인 섹션 gradient 배경 */
+#main {
+  background: linear-gradient(135deg, 
+    rgba(255, 255, 255, 0.9) 0%, 
+    rgba(254, 245, 245, 0.9) 50%,
+    rgba(255, 229, 229, 0.9) 100%
+  );
+  padding: 60px 40px;
+  margin: 40px auto;
+  max-width: 1200px;
+  border-radius: 20px;
+  box-shadow: 
+    0 10px 30px rgba(171, 13, 13, 0.1),
+    0 5px 15px rgba(171, 13, 13, 0.05);
+}
+
+/* 메뉴 섹션 gradient 배경 */
+#menu {
+  background: linear-gradient(to bottom, 
+    rgba(255, 255, 255, 0.5) 0%, 
+    rgba(254, 240, 240, 0.5) 100%
+  );
+  padding: 60px 20px;
+  margin: 40px 0;
+}
+
+/* 헤더에 backdrop-filter blur 효과 */
+header {
+  position: relative;
+  backdrop-filter: blur(10px);
+}
+
+.navigation {
+  backdrop-filter: blur(20px);
+  background-color: rgba(255, 255, 255, 0.8);
+  padding: 16px 24px;
+  border-radius: 15px;
+  box-shadow: 
+    0 4px 15px rgba(171, 13, 13, 0.1),
+    0 2px 8px rgba(86, 7, 7, 0.05);
+}
+
+/* 깊이감 있는 box-shadow */
+.menu-card {
+  box-shadow: 
+    0 8px 20px rgba(171, 13, 13, 0.15),
+    0 3px 8px rgba(86, 7, 7, 0.1),
+    inset 0 1px 2px rgba(255, 255, 255, 0.5);
+  transition: box-shadow 0.3s ease, transform 0.3s ease;
+}
+
+.menu-card:hover {
+  box-shadow: 
+    0 15px 40px rgba(171, 13, 13, 0.25),
+    0 8px 20px rgba(86, 7, 7, 0.15),
+    inset 0 1px 2px rgba(255, 255, 255, 0.5);
+}
+
+/* Great Values 리스트 깊이감 */
+.great-values li {
+  box-shadow: 
+    0 5px 15px rgba(171, 13, 13, 0.2),
+    0 2px 5px rgba(86, 7, 7, 0.1);
+  transition: all 0.3s ease;
+}
+
+.great-values li:hover {
+  box-shadow: 
+    0 8px 25px rgba(171, 13, 13, 0.3),
+    0 4px 10px rgba(86, 7, 7, 0.15);
+  transform: translateY(-3px);
+}
+
+/* 버튼 깊이감 */
+.menu-btn {
+  box-shadow: 
+    0 4px 12px rgba(171, 13, 13, 0.3),
+    0 2px 5px rgba(86, 7, 7, 0.2);
+  transition: all 0.2s ease;
+}
+
+.menu-btn:hover {
+  box-shadow: 
+    0 6px 18px rgba(171, 13, 13, 0.4),
+    0 3px 8px rgba(86, 7, 7, 0.25);
+  transform: translateY(-2px);
+}
+
+.menu-btn:active {
+  box-shadow: 
+    0 2px 5px rgba(171, 13, 13, 0.3),
+    0 1px 2px rgba(86, 7, 7, 0.2);
+}
+
+/* 맨 위로 버튼 깊이감 */
+#to-top {
+  box-shadow: 
+    0 6px 20px rgba(171, 13, 13, 0.4),
+    0 3px 8px rgba(86, 7, 7, 0.3);
+}
+
+#to-top:hover {
+  box-shadow: 
+    0 8px 25px rgba(171, 13, 13, 0.5),
+    0 4px 12px rgba(86, 7, 7, 0.35);
+}
+
+/* 푸터 깊이감 */
+footer {
+  box-shadow: 
+    0 -5px 20px rgba(171, 13, 13, 0.15),
+    0 -2px 8px rgba(86, 7, 7, 0.1);
+  background: linear-gradient(to bottom,
+    #eaa6a6 0%,
+    #e89999 100%
+  );
+}
+
+/* Gallery scroll-snap 효과 */
+.gallery-container {
+  display: flex;
+  overflow-x: auto;
+  scroll-snap-type: x mandatory;
+  scroll-behavior: smooth;
+  gap: 20px;
+  padding: 20px;
+  -webkit-overflow-scrolling: touch;
+}
+
+.gallery-item {
+  scroll-snap-align: center;
+  flex: 0 0 300px;
+  height: 400px;
+  background-color: white;
+  border-radius: 15px;
+  box-shadow: 
+    0 8px 20px rgba(171, 13, 13, 0.15),
+    0 3px 8px rgba(86, 7, 7, 0.1);
+  transition: transform 0.3s ease;
+}
+
+.gallery-item:hover {
+  transform: scale(1.05);
+}
+
+/* 섹션 헤더 gradient */
+.section-header {
+  background: linear-gradient(135deg, 
+    rgba(171, 13, 13, 0.1) 0%, 
+    rgba(255, 255, 255, 0) 100%
+  );
+  padding: 30px 20px;
+  border-radius: 15px;
+  margin-bottom: 40px;
+}
+
+/* 배지에 gradient 추가 */
+.New-badge {
+  background: linear-gradient(135deg, #ab0d0d 0%, #d41414 100%);
+  box-shadow: 
+    0 3px 10px rgba(171, 13, 13, 0.4),
+    0 1px 3px rgba(86, 7, 7, 0.3);
+}
+
+.Best-badge {
+  background: linear-gradient(135deg, var(--primary-color) 0%, #c71515 100%);
+  box-shadow: 
+    0 3px 10px rgba(171, 13, 13, 0.4),
+    0 1px 3px rgba(86, 7, 7, 0.3);
+}
+
+/* 메뉴 카테고리 제목 gradient */
+.menu-category h3 {
+  background: linear-gradient(90deg, 
+    transparent 0%, 
+    rgba(171, 13, 13, 0.1) 20%, 
+    rgba(171, 13, 13, 0.1) 80%, 
+    transparent 100%
+  );
+  padding: 15px;
+  border-radius: 10px;
+}
+
+/* 스크롤바 스타일링 */
+.gallery-container::-webkit-scrollbar {
+  height: 8px;
+}
+
+.gallery-container::-webkit-scrollbar-track {
+  background: rgba(171, 13, 13, 0.1);
+  border-radius: 10px;
+}
+
+.gallery-container::-webkit-scrollbar-thumb {
+  background: linear-gradient(90deg, #ab0d0d 0%, #d41414 100%);
+  border-radius: 10px;
+}
+
+.gallery-container::-webkit-scrollbar-thumb:hover {
+  background: linear-gradient(90deg, #d41414 0%, #ab0d0d 100%);
+}

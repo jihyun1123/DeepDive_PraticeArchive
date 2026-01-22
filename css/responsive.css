@@ -1,0 +1,453 @@
+/* ========================================
+   반응형 웹 디자인
+   ======================================== */
+
+/* 햄버거 메뉴 버튼 (기본적으로 숨김) */
+.hamburger-menu {
+  display: none;
+  flex-direction: column;
+  gap: 5px;
+  cursor: pointer;
+  padding: 10px;
+  background-color: white;
+  border: 2px solid var(--primary-color);
+  border-radius: 8px;
+  z-index: 1000;
+}
+
+.hamburger-menu span {
+  width: 25px;
+  height: 3px;
+  background-color: var(--primary-color);
+  transition: all 0.3s ease;
+}
+
+.hamburger-menu.active span:nth-child(1) {
+  transform: rotate(45deg) translate(7px, 7px);
+}
+
+.hamburger-menu.active span:nth-child(2) {
+  opacity: 0;
+}
+
+.hamburger-menu.active span:nth-child(3) {
+  transform: rotate(-45deg) translate(7px, -7px);
+}
+
+/* ========================================
+   데스크톱 (1024px 이상) - 기본 스타일
+   ======================================== */
+@media (min-width: 1024px) {
+  .menu-list {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 20px;
+    padding: 20px;
+  }
+
+  .menu-card {
+    width: 100%;
+  }
+}
+
+/* ========================================
+   태블릿 (768px ~ 1023px)
+   ======================================== */
+@media (max-width: 1023px) and (min-width: 768px) {
+  /* 헤더 조정 */
+  .navigation h1 {
+    font-size: 40px;
+    margin-top: 20vw;
+  }
+
+  .navigation-left ul,
+  .navigation-right ul {
+    gap: 10px;
+  }
+
+  .navigation-left a,
+  .navigation-right a {
+    font-size: 12px;
+    padding: 4px 8px;
+  }
+
+  /* 메뉴 2열 그리드 */
+  .menu-list {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 20px;
+    padding: 15px;
+  }
+
+  .menu-card {
+    width: 100%;
+  }
+
+  /* 텍스트 크기 조정 */
+  h2 {
+    font-size: 4vw;
+  }
+
+  p {
+    font-size: 2.5vw;
+  }
+
+  .menu-card h4 {
+    font-size: 2.5vw;
+  }
+
+  .menu-card .price {
+    font-size: 3vw;
+  }
+
+  .menu-btn {
+    font-size: 2vw;
+    padding: 8px 16px;
+  }
+
+  /* Great Values 리스트 */
+  .great-values {
+    flex-wrap: wrap;
+    gap: 10px;
+  }
+
+  .great-values li {
+    font-size: 2.5vw;
+  }
+
+  /* 갤러리 섹션 */
+  .gallery-container {
+    gap: 15px;
+    padding: 15px;
+  }
+
+  .gallery-item {
+    flex: 0 0 250px;
+    height: 350px;
+  }
+}
+
+/* ========================================
+   모바일 (~767px)
+   ======================================== */
+@media (max-width: 767px) {
+  /* 햄버거 메뉴 표시 */
+  .hamburger-menu {
+    display: flex;
+    position: fixed;
+    top: 20px;
+    right: 20px;
+    z-index: 1001;
+  }
+
+  /* 네비게이션 숨김 및 모바일 스타일 */
+  .navigation {
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .navigation h1 {
+    position: static;
+    transform: none;
+    font-size: 32px;
+    margin-top: 60px;
+    margin-bottom: 20px;
+    text-align: center;
+    width: 100%;
+    order: -1; /* h1을 맨 위로 */
+  }
+
+  /* 네비게이션 메뉴를 하나의 컨테이너로 */
+  .navigation-left,
+  .navigation-right {
+    position: fixed;
+    top: 0;
+    right: -100%;
+    width: 70%;
+    height: 100vh;
+    background-color: rgba(255, 255, 255, 0.98);
+    box-shadow: -2px 0 10px rgba(0, 0, 0, 0.1);
+    transition: right 0.3s ease;
+    z-index: 1000;
+    padding: 80px 20px 20px 20px;
+    overflow-y: auto;
+  }
+
+  .navigation-left.active {
+    right: 0;
+  }
+
+  /* navigation-right는 navigation-left 아래에 표시 */
+  .navigation-right.active {
+    right: 0;
+    padding-top: 0;
+    position: relative;
+    background-color: transparent;
+    box-shadow: none;
+    height: auto;
+  }
+
+  .navigation-left ul,
+  .navigation-right ul {
+    flex-direction: column;
+    gap: 15px;
+    width: 100%;
+  }
+
+  .navigation-left li,
+  .navigation-right li {
+    width: 100%;
+  }
+
+  .navigation-left a,
+  .navigation-right a {
+    display: block;
+    width: 100%;
+    padding: 12px 15px;
+    font-size: 16px;
+    text-align: center;
+    border-radius: 8px;
+  }
+
+  /* 헤더 조정 */
+  .navigation h1 {
+    position: static;
+    transform: none;
+    font-size: 32px;
+    margin-top: 60px;
+    text-align: center;
+    width: 100%;
+  }
+
+  header {
+    min-height: 300px;
+    padding: 16px;
+  }
+
+  .banner {
+    height: 100%;
+  }
+
+  /* 메인 섹션 */
+  #main {
+    padding: 20px 15px;
+  }
+
+  h2 {
+    font-size: 6vw;
+    margin-bottom: 15px;
+  }
+
+  p {
+    font-size: 4vw;
+    line-height: 1.8;
+    margin-bottom: 15px;
+  }
+
+  span {
+    display: inline-block;
+  }
+
+  /* Great Values 세로 정렬 */
+  .great-values {
+    flex-direction: column;
+    align-items: center;
+    gap: 10px;
+    padding: 0;
+  }
+
+  .great-values li {
+    font-size: 4vw;
+    width: 80%;
+    text-align: center;
+    padding: 12px;
+  }
+
+  /* 메뉴 섹션 */
+  #menu {
+    padding: 20px 10px;
+  }
+
+  .section-header {
+    padding: 0 10px;
+  }
+
+  .menu-btn {
+    font-size: 3.5vw;
+    padding: 8px 12px;
+    margin: 3px;
+  }
+
+  .menu-category {
+    margin-top: 15vw;
+    margin-bottom: 10vw;
+  }
+
+  .menu-category h3 {
+    font-size: 5vw;
+  }
+
+  /* 메뉴 카드 1열 세로 배치 */
+  .menu-list {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+    padding: 15px 10px;
+  }
+
+  .menu-card {
+    width: 100%;
+    padding: 15px;
+  }
+
+  .menu-card h4 {
+    font-size: 4.5vw;
+  }
+
+  .menu-card .menu-image {
+    width: 70%;
+    max-width: 200px;
+  }
+
+  .menu-card .price {
+    font-size: 5vw;
+  }
+
+  .menu-card .desc {
+    font-size: 3.5vw;
+  }
+
+  .menu-card .New-badge,
+  .menu-card .Best-badge {
+    font-size: 3.5vw;
+    padding: 4px 8px;
+  }
+
+  /* 푸터 */
+  footer {
+    flex-direction: column;
+    text-align: center;
+    padding: 20px 15px;
+  }
+
+  footer .footer-left,
+  footer .time {
+    width: 100%;
+    margin-bottom: 20px;
+  }
+
+  footer address,
+  footer dl {
+    font-size: 3.5vw;
+  }
+
+  .social-links a {
+    width: 35px;
+    height: 35px;
+    font-size: 4vw;
+  }
+
+  /* 갤러리 섹션 */
+  #gallery {
+    padding: var(--spacing-xl) var(--spacing-sm);
+  }
+
+  .gallery-container {
+    gap: 10px;
+    padding: 10px;
+  }
+
+  .gallery-item {
+    flex: 0 0 280px;
+    height: 380px;
+  }
+
+  .gallery-item img {
+    height: 250px;
+  }
+
+  /* 맨 위로 버튼 */
+  #to-top {
+    bottom: 20px;
+    right: 20px;
+    padding: 10px 8px;
+    font-size: 3vw;
+  }
+
+  /* 로딩 스피너 크기 조정 */
+  .spinner {
+    width: 50px;
+    height: 50px;
+    border-width: 4px;
+  }
+
+  /* 애니메이션 지연 시간 단축 (모바일 성능) */
+  section#main {
+    animation-delay: 0.1s;
+  }
+
+  section#menu {
+    animation-delay: 0.2s;
+  }
+
+  footer {
+    animation-delay: 0.3s;
+  }
+
+  .menu-card {
+    animation-duration: 0.4s;
+  }
+}
+
+/* ========================================
+   작은 모바일 (~480px)
+   ======================================== */
+@media (max-width: 480px) {
+  .navigation h1 {
+    font-size: 28px;
+  }
+
+  h2 {
+    font-size: 7vw;
+  }
+
+  p {
+    font-size: 4.5vw;
+  }
+
+  .menu-btn {
+    font-size: 4vw;
+    padding: 6px 10px;
+  }
+
+  .menu-card h4 {
+    font-size: 5vw;
+  }
+
+  .menu-card .price {
+    font-size: 6vw;
+  }
+
+  .menu-card .desc {
+    font-size: 4vw;
+  }
+}
+
+/* ========================================
+   가로 모드 모바일
+   ======================================== */
+@media (max-height: 500px) and (orientation: landscape) {
+  header {
+    min-height: 200px;
+  }
+
+  .navigation h1 {
+    margin-top: 30px;
+    font-size: 24px;
+  }
+
+  .hamburger-menu {
+    top: 10px;
+    right: 10px;
+  }
+}

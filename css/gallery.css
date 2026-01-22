@@ -1,2 +1,91 @@
-/* Gallery styles (placeholder) */
-/* Add gallery-related styles here when the section is implemented. */
+/* Gallery styles with scroll-snap */
+#gallery {
+  padding: var(--spacing-xxl) var(--spacing-lg);
+  background: linear-gradient(to right, 
+    rgba(255, 255, 255, 0.5) 0%, 
+    rgba(254, 240, 240, 0.5) 100%
+  );
+  margin: var(--spacing-xl) 0;
+}
+
+#gallery h2 {
+  margin-bottom: var(--spacing-xl);
+}
+
+.gallery-container {
+  display: flex;
+  overflow-x: auto;
+  scroll-snap-type: x mandatory;
+  scroll-behavior: smooth;
+  gap: var(--spacing-lg);
+  padding: var(--spacing-lg);
+  -webkit-overflow-scrolling: touch;
+  scrollbar-width: thin;
+  scrollbar-color: var(--primary-color) rgba(171, 13, 13, 0.1);
+}
+
+.gallery-item {
+  scroll-snap-align: center;
+  flex: 0 0 300px;
+  height: 400px;
+  background-color: var(--white);
+  border-radius: var(--radius-lg);
+  box-shadow: 
+    0 8px 20px rgba(171, 13, 13, 0.15),
+    0 3px 8px rgba(86, 7, 7, 0.1);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  display: flex;
+  flex-direction: column;
+  overflow: hidden;
+}
+
+.gallery-item:hover {
+  transform: scale(1.05);
+  box-shadow: 
+    0 12px 30px rgba(171, 13, 13, 0.25),
+    0 5px 12px rgba(86, 7, 7, 0.15);
+}
+
+.gallery-item img {
+  width: 100%;
+  height: 300px;
+  object-fit: cover;
+}
+
+.gallery-item-content {
+  padding: var(--spacing-md);
+  text-align: center;
+}
+
+.gallery-item-content h3 {
+  font-size: var(--font-size-md);
+  color: var(--primary-color);
+  margin-bottom: var(--spacing-xs);
+}
+
+.gallery-item-content p {
+  font-size: var(--font-size-sm);
+  color: var(--text-color);
+  margin: 0;
+}
+
+/* 스크롤바 스타일링 */
+.gallery-container::-webkit-scrollbar {
+  height: 8px;
+}
+
+.gallery-container::-webkit-scrollbar-track {
+  background: rgba(171, 13, 13, 0.1);
+  border-radius: var(--radius-md);
+}
+
+.gallery-container::-webkit-scrollbar-thumb {
+  background: linear-gradient(90deg, var(--primary-color) 0%, var(--primary-light) 100%);
+  border-radius: var(--radius-md);
+  transition: background 0.3s ease;
+}
+
+.gallery-container::-webkit-scrollbar-thumb:hover {
+  background: linear-gradient(90deg, var(--primary-light) 0%, var(--primary-color) 100%);
+}
+
