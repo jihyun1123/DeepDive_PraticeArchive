@@ -10,17 +10,11 @@ const users = [
 const result = { "10대": [], "20대": [], "30대": [] };
 
 for (let i = 0; i < users.length; i++){
-  const user = users[i];
+  const userName = users[i].name;
+  const userAge = users[i].age;
 
-  if(user.age >= 10 && user.age < 20){
-    result["10대"].push(user.name);
-  }
-  else if(user.age >=20 && user.age < 30){
-    result["20대"].push(user.name);
-  }
-  else if (user.age >= 30 && user.age < 40) {
-    result["30대"].push(user.name);
-  }
+  const calAge = Math.floor(userAge / 10) * 10 + "대"
+  result[calAge].push(userName);
 }
 
 console.log(result);
