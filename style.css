@@ -1,0 +1,194 @@
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  
+  --primary-color: #f168f8;
+  --secondary-color: #b069fc;
+  --border-color: #db92ca;
+  --input-bg-color: #fcf5fb;
+  --text-color: #d85cbb;
+  --static-bg-color: #fff0fb;
+}
+
+
+body {
+  min-height: 100vh;
+  background: linear-gradient(180deg, var(--primary-color) 0%, var(--secondary-color) 100%);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+}
+
+.main-container {
+  position: relative;
+  background-color: #ffffff;
+  width: 60vh;
+  height: 80vh;
+  padding: 2rem;
+  padding-bottom: 5rem; /* 하단 버튼 공간 확보 */
+  border-radius: clamp(10px, 1.5vw, 20px);
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
+}
+
+.ToDoList-title {
+  font-size: 4vh;
+  color: #333333;
+  margin-bottom: 2rem;
+}
+
+/* ============ 할 일 입력 영역 ============*/
+
+#text-input {
+  width: 75%;
+  padding: 0.6rem;
+  margin-bottom: 1rem;
+  font-size: 2vh;
+  border: 2px solid var(--border-color);
+  background-color: var(--input-bg-color);
+  border-radius: 15px;
+  color: var(--text-color);
+}
+
+#text-input:focus {
+  outline: none;
+  border-color: var(--primary-color);
+}
+
+/* placeholder 색상 바꾸기 */
+#text-input::placeholder {
+  color: var(--border-color);
+}
+
+#add-task-button {
+  padding: 0.6rem 1.2rem;
+  font-size: 2vh;
+  font-weight: bold;
+
+  color: #ffffff;
+  background: linear-gradient(180deg, var(--primary-color) 0%, var(--secondary-color) 100%);
+  border: none;
+  border-radius: 15px;
+  cursor: pointer;
+}
+
+#add-task-button:hover {
+  background: var(--secondary-color);
+}
+
+
+/* ============할 일 통계 영역 ============*/
+
+.statistics-container{
+  width: 95%;
+  height: 10%;
+  font-size: 2vh;
+  color: var(--border-color);
+  background-color: var(--static-bg-color);
+  border-radius: 15px;
+  margin-left: auto;
+  margin-right: auto;
+  margin-bottom: 1.5rem;
+
+  display: flex;
+  justify-content: center; 
+  align-items: center; 
+  gap: 3rem;              /* 텍스트 간격 */  
+}
+
+#total-task-count, #completed-task-count {
+  font-weight: bold;
+  color: var(--primary-color)
+}
+
+/* ============할 일 목록 영역 ============*/
+
+#task-list {
+  padding: 0;
+  margin: 0;
+}
+
+.task-list-item {
+  width: 95%;
+  margin-top: 0.5rem;
+  margin-left: auto;
+  margin-right: auto;
+
+  padding: 0.6rem;
+  background-color: var(--static-bg-color);
+  border-radius: 15px;
+  list-style: none;
+  
+  display: flex; /* 가로 방향 배치 */
+  align-items: center; /* 세로 방향 가운데 정렬 */
+  gap: 0.6rem;
+}
+
+.task-text {
+  font-size: 2vh;
+  color: var(--text-color);
+  flex: 1;   /* 남은 공간 모두 차지 */
+  /* 즉, 텍스트는 왼쪽 정렬되어있고, 텍스트가 남은 공간을 모두 차지하기 때문에 버튼들은 남은 공간이 없어서 오른쪽으로 밀림 */
+  /*| [텍스트──────────────][완료][삭제] |*/
+  text-align: left;
+}
+
+.completed-task-button, .delete-task-button {
+  padding: 0.5rem 1rem;
+  font-size: 1.5vh;
+  color: #ffffff;
+  font-weight: bold;
+  border: none;
+  border-radius: 15px;
+  cursor: pointer;
+}
+
+.completed-task-button {
+  background-color: var(--primary-color);
+}
+
+.completed-task-button:hover {
+  background-color: var(--secondary-color);
+}
+
+/* 💡완료된 항목 스타일 */
+.task-list-item.completed {
+  background-color: var(--static-bg-color);
+  opacity: 0.7;
+}
+
+.task-text.completed {
+  text-decoration: line-through;  /* 취소선 */
+  color: var(--border-color);
+}
+
+.delete-task-button {
+  background-color: #fb5858;
+}
+
+.delete-task-button:hover {
+  background-color: #ff3030;
+}
+
+/*
+.delete-all-button {
+  position: absolute;
+  right: 1rem;
+  bottom: 1rem;
+  padding: 0.6rem 1.4rem;
+
+  font-size: 2vh;
+  font-weight: bold;
+  color: #ffffff;
+  background: #fb5858;
+  border: none;
+  border-radius: 15px;
+  cursor: pointer;
+}
+
+.delete-all-button:hover {
+  background: #ff3030;
+}
+  */

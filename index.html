@@ -3,11 +3,37 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <link rel="stylesheet" href="styles.css">
+  <link rel="stylesheet" href="style.css">
   <script src="script.js" defer></script>
-  <title>Document</title>
+  <title>📝 My To-Do List 💘</title>
 </head>
 <body>
-  
+  <!--JS로 조작할 요소는 ID 위주 나머지는 class-->
+  <section class="main-container">
+    <h1 class="ToDoList-title">📝 My To-Do List 💘</h1>
+    <input type="text" id="text-input" placeholder="할 일을 입력해주세요 !!" />
+    <button id="add-task-button">추가</button>
+
+    <div class="statistics-container">
+      <span id="total-tasks">총 할 일: 
+        <span id="total-task-count">0</span>
+        개
+      </span>
+      <span id="completed-tasks">완료된 할 일: 
+        <span id="completed-task-count">0</span>
+        개
+      </span>
+    </div>
+
+    <ul id="task-list">
+      <!-- 할 일 항목이 추가되면 JS가 li를 채웁니다 -->
+      <!--
+        <span class="task-text">${inputText}</span>
+        <button class="completed-task-button">완료</button>
+        <button class="delete-task-button">삭제</button>
+      -->
+    </ul>
+    <!--<button class="delete-all-button" >일괄 삭제</button> -->
+  </section>
 </body>
 </html>
