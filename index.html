@@ -8,6 +8,52 @@
   <title>💘커플 D-Day관리 앱💘</title>
 </head>
 <body>
-  
+  <section id="main-container">
+    <header id="header-container">
+      <h1>💘커플 D-Day관리 앱💘</h1>
+      <p>우리의 추억을 기록해봐요</p>
+    </header>
+
+    <main id="main-container">
+      <input type="text" class="event-input" placeholder="이벤트 이름 ( 예 : 100일, 1주년)">
+      <input type="date" class="date-input" >
+      <select class="category-select">
+        <option value="etc">📌 기타</option>
+        <option value="anniversary">💐 기념일</option>
+        <option value="trip">✈️ 여행</option>
+        <option value="gift">🎁 선물</option>
+      </select>
+      <button id="add-button">추가하기</button>
+    </main>
+
+    <div id="statistic-container">
+      <div class="statistic-item">
+        <p>전체</p>
+        <p id="total-events">0</p>
+      </div>
+      <div class="statistic-item">
+        <p>예정</p>
+        <p id="upcoming-events">0</p>
+      </div>
+      <div class="statistic-item">
+        <p>지남</p>
+        <p id="past-events">0</p>
+    </div>
+
+    <div id="event-list-container">
+      <h3>이벤트 목록</h3>
+      <button id="clear-all-button">전체 삭제</button>
+      <ul id="event-list">
+        <!-- 이벤트 항목이 여기에 추가됨 -->
+        <li class="event-list-item">
+          <p class="event-item-title">100일</p>
+          <span class="event-item-type">기념일</span>
+          <p class="event-item-date">2026-01-27-화</p>
+          <p class="event-item-dday">D-5</p>
+          <button class="delete-button">삭제</button>
+        </li>
+        
+      </ul>
+  </section>
 </body>
 </html>
