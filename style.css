@@ -128,6 +128,7 @@ main {
 
 #add-button:hover{
   opacity: 0.6;
+  border: none;
 }
 
 /* statistic-container */
