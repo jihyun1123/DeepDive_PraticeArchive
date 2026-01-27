@@ -261,26 +261,31 @@ h3 {
 
 /* 카테고리별 색상 구분 */
 .event-item-type.category-anniversary {
+  margin-top: 1vh;
   background-color: #ff69b4;
   color: white;
 }
 
 .event-item-type.category-trip {
+  margin-top: 1vh;
   background-color: #4ecdc4;
   color: white;
 }
 
 .event-item-type.category-gift {
+  margin-top: 1vh;
   background-color: #ffa502;
   color: white;
 }
 
 .event-item-type.category-etc {
+  margin-top: 1vh;
   background-color: #b8b8b8;
   color: white;
 }
 
 .event-item-date{
+  margin-top: 1vh;
   font-size: 1.8vh;
   color: var(--input-border-color);
 }
@@ -292,6 +297,7 @@ h3 {
   background: linear-gradient(90deg, var(--secondary-color), var(--border-color));
   padding: 0.5vh 1.2vh;
   border-radius: 3vh;
+  margin-top: -5vh;
   display: inline-block;
 }
 
@@ -310,6 +316,11 @@ h3 {
   color: white;
   border: #e95252 0.2vh solid;
 }
+
+
+
+
+
 
 /* ===== 반응형 디자인 ===== */
 
