@@ -1,0 +1,122 @@
+
+/*
+font, margin, padding은 rem 단위 사용
+width는 % 단위 사용
+height는 보통 auto 사용하지만, 최소 높이가 필요한 경우 min-height 사용 (vh)
+고정 크기는 px
+반응형인경우 clamp() 사용
+*/
+
+
+*{
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+  font-family: 'Arial', sans-serif;
+
+  --primary-color: #2875f0;
+  --secondary-color: #c7dbf7;
+  --button-color: #3f28f0;
+  --button-hover-color: #1f1bb8;
+}
+
+body {
+  background: linear-gradient(180deg, #c7dbf7, #2875f0);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+}
+
+section {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between; /* 수직 방향으로 공간 분배 */
+
+  height: auto;
+  min-height: clamp(400px, 60vh, 80vh); /*auto는 clamp에 사용 못함*/
+  width: clamp(280px, 35vw, 600px); 
+  padding: 3rem;
+  text-align: center;
+
+  background-color: #ffffff;
+  box-shadow: 0 4px 8px rgba(63, 40, 240, 0.2);
+  border-radius: 2rem;
+}
+
+h1 {
+  color: #000000;
+  margin-bottom: 0.5rem;
+  text-align: center;
+}
+
+.study-image {
+  font-size: clamp(3rem, 15vw, 10rem);
+  animation: floating 3s ease-in-out infinite; 
+  /* 3초에 걸쳐 부드럽게위로 20px올라갔다 내려옴, 무한 반복  */
+}
+/* 애니메이션이 시간에 따라 어떻게 변할지 단계별로 정의하는 규칙 */
+@keyframes floating {
+  0%, 100% {    /* 시작, 끝 상태 */
+    transform: translateY(0);
+  }
+  50% { /* 중간 상태 */
+    transform: translateY(-20px);
+  }
+}
+
+.nickname-input{
+  width: 100%;
+  padding: 0.5rem;
+  font-size: 1rem;
+  margin-bottom: 1rem;
+  border: 2px solid var(--primary-color);
+  border-radius: 0.5rem;
+}
+
+.nickname-input:focus {
+  outline: none;
+  border-color: var(--button-color);
+}
+
+.nickname-input::placeholder {
+  color: #c0c0c0;
+}
+
+.enter-button {
+  padding: 1rem 2rem;
+  font-size: 1rem;
+  font-weight: bold;
+  color: #ffffff;
+  background-color: var(--button-color);
+  border: none;
+  border-radius: 1rem;
+  cursor: pointer;
+}
+
+.enter-button:hover {
+  background-color: var(--button-hover-color);
+}
+
+
+/* 모바일 반응형*/
+@media (max-width: 600px) {
+  section {
+    width: 90vw;
+    min-height: 70vh;
+    padding: 2rem;
+  }
+
+  /*span은 인라인 요소라서 margin 상하랑 width, height가 적용이 안됨
+    그래서 p태그로 바꿈*/
+  .study-image {
+    font-size: clamp(4rem, 40vw, 8rem);
+  }
+
+  .enter-button {
+    width: 80%;
+    padding: 1rem;
+    font-size: 1rem;
+  }
+}
+

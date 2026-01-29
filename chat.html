@@ -3,10 +3,46 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  
+  <link href="chatStyle.css" rel="stylesheet">
+  <script src="chatScript.js" defer></script>
   <title>✏️ FE 스터디 실시간 채팅방 🤓</title>
 </head>
 <body>
-  
+  <section>
+    <header>
+      <div id="chat-header">
+        <h1>🗨️ FE 스터디 실시간 채팅방 ✏️</h1>
+        <p id="user-nickname" class="user-nickname"></p>
+        <button type="button" class="logout-button" id="logout-button">나가기</button>
+      </div>
+    </header>
+
+    <main>
+      <!-- 로딩 메시지 -->
+      <div id="loading-message" class="loading-message" style="display: none;">
+        메시지를 불러오는 중...
+      </div>
+      
+      <!-- 에러 메시지 -->
+      <div id="error-message" class="error-message" style="display: none;"></div>
+      
+      <div class="chat-messages">
+        <div id="other-chat-message"></div>
+        <div id="my-chat-message"></div>
+      </div>
+    </main>
+
+    <footer>
+      <div id="chat-input-section">
+        <input 
+          type="text" 
+          id="message-input" 
+          class="message-input" 
+          placeholder="메시지를 입력하세요..."
+        >
+        <button type="button" class="send-message-button" id="send-button">전송</button>
+      </div>
+    </footer>
+  </section>
 </body>
 </html>
