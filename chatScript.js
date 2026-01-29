@@ -10,7 +10,7 @@ const userNickname = localStorage.getItem("userNickname");
 
 let messages = [];  // 메시지 저장 배열
 let lastMessageId = 0;
-const messageIds = new Set();
+const messageIds = new Set(); // 중복 메시지 ID 저장용 세트
 let pollingInterval = null;  // 폴링 인터발 아이디
 let isSending = false;  // 메시지 전송 중 여부
 
@@ -64,13 +64,13 @@ async function loadMessages() {
     }
 
     messages = result.data || [];
-    messages.sort((a, b) => a.id - b.id);
+    messages.sort((a, b) => a.id - b.id); // ID 기준 정렬
 
     messages.forEach((messageObj) => {
       messageIds.add(messageObj.id);
     });
 
-    lastMessageId = messages.length > 0 ? messages[messages.length - 1].id : 0;
+    lastMessageId = messages.length > 0 ? messages[messages.length - 1].id : 0; // 마지막 메시지 ID 업데이트
     clearError();
   } catch (error) {
     showError(error.message || "메시지 불러오기 실패: 다시 시도해주세요.");
@@ -108,19 +108,29 @@ async function checkNewMessages() {
 
     const result = await response.json();
     if (!result.success) { // 성공 플래그 확인
+      // Optional chaining (?.) 사용
+      // 
+      // result.error가 undefined면 에러 없이 넘어감
+      // result.error.message가 있으면 그 메시지 사용
       throw new Error(result?.error?.message || "새 메시지 조회 실패"); // 오류 메시지 표시
     }
 
-    const newMessages = result.data || [];
-    if (newMessages.length > 0) {
-      newMessages.sort((a, b) => a.id - b.id);
+    // 새 메시지 처리
+    //|| [] → 만약 result.data가 undefined나 null이면 빈 배열로 처리 즉, 새 메시지가 없더라도 코드 오류 방지
+    const newMessages = result.data || []; // 새 메시지 배열
+    if (newMessages.length > 0) { // 새 메시지가 있으면
+      // ID 기준 정렬 / 오래된 메세지 낮은 id, 최신 메세지 높은 id
+      newMessages.sort((a, b) => a.id - b.id);  
+      // 중복 없이 메시지 추가 및 표시
       newMessages.forEach((messageObj) => {
-        if (!messageIds.has(messageObj.id)) {
+        // set객체로 중복 체크
+        if (!messageIds.has(messageObj.id)) { // 중복 체크
           messageIds.add(messageObj.id);
           messages.push(messageObj);
           displayMessage(messageObj);
         }
       });
+      // 마지막 메시지 ID 업데이트
       lastMessageId = newMessages[newMessages.length - 1].id;
     }
   } catch (error) {
